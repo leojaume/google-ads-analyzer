@@ -10,8 +10,8 @@ fetch_button = st.button("Obtener datos de campañas")
 # Función para obtener datos de la API
 def get_campaign_data(client_id):
     try:
-        # Carga las credenciales (sustituye con la ruta a tu archivo JSON de credenciales)
-        client = GoogleAdsClient.load_from_file("google-ads.yaml")
+        # Carga las credenciales desde variables de entorno
+        client = GoogleAdsClient.load_from_env()
         service = client.get_service("GoogleAdsService")
         
         # Consulta para obtener métricas de campañas
