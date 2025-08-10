@@ -1,3 +1,3 @@
 streamlit
-google-ads==13.0.0
+google-ads==17.0.0
 pandas
