@@ -44,4 +44,4 @@ if fetch_button and client_id:
             st.dataframe(df)
         else:
             st.warning("No se encontraron campañas activas o pausadas en los últimos 30 días.")
-st.write("Análisis de mejoras se implementará en la próxima versión. MCC: 448-393-4474 / Ayrto: 448-393-4474")
+st.write("Análisis de mejoras se implementará en la próxima versión. MCC: 448-393-4474 / Ayrto: 600-729-8405")
