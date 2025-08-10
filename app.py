@@ -8,7 +8,8 @@ fetch_button = st.button("Obtener datos de campañas")
 
 def get_campaign_data(client_id):
     try:
-        client = GoogleAdsClient.load_from_env()
+        config_dict = dict(st.secrets["google_ads"])
+        client = GoogleAdsClient.load_from_dict(config_dict)
         service = client.get_service("GoogleAdsService")
         query = """
         SELECT
@@ -43,5 +44,5 @@ if fetch_button and client_id:
             st.subheader("Resultados de las campañas")
             st.dataframe(df)
         else:
-            st.warning("No se encontraron campañas activas o pausadas en los últimos 30 días.")
-st.write("Análisis de mejoras se implementará en la próxima versión. MCC: 448-393-4474 / Ayrto: 600-729-8405")
+            st.warning("No se encontraron campañas activas o pausadas en los últimos 30 días (incluyendo hoy).")
+st.write("Análisis de mejoras se implementará en la próxima versión.")
